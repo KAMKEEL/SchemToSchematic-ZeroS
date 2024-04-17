@@ -1434,7 +1434,7 @@ var blocksNamespace = {
 'minecraft:spruce_trapdoor[facing=south,half=top,open=false,powered=false,waterlogged=false]':15065,
 'minecraft:spruce_trapdoor[facing=west,half=top,open=false,powered=false,waterlogged=false]':15066,
 'minecraft:spruce_trapdoor[facing=east,half=top,open=false,powered=false,waterlogged=false]':15067,
-'minecraft:spruce_trapdoor[facing=north,half=top,open=true,powered=false,waterlogged=false]':15068
+'minecraft:spruce_trapdoor[facing=north,half=top,open=true,powered=false,waterlogged=false]':15068,
 'minecraft:spruce_trapdoor[facing=south,half=top,open=true,powered=false,waterlogged=false]':15069,
 'minecraft:spruce_trapdoor[facing=west,half=top,open=true,powered=false,waterlogged=false]':15070,
 'minecraft:spruce_trapdoor[facing=east,half=top,open=true,powered=false,waterlogged=false]':15071,
@@ -1450,7 +1450,7 @@ var blocksNamespace = {
 'minecraft:dark_oak_trapdoor[facing=south,half=top,open=false,powered=false,waterlogged=false]':15369,
 'minecraft:dark_oak_trapdoor[facing=west,half=top,open=false,powered=false,waterlogged=false]':15370,
 'minecraft:dark_oak_trapdoor[facing=east,half=top,open=false,powered=false,waterlogged=false]':15371,
-'minecraft:dark_oak_trapdoor[facing=north,half=top,open=true,powered=false,waterlogged=false]':15372
+'minecraft:dark_oak_trapdoor[facing=north,half=top,open=true,powered=false,waterlogged=false]':15372,
 'minecraft:dark_oak_trapdoor[facing=south,half=top,open=true,powered=false,waterlogged=false]':15373,
 'minecraft:dark_oak_trapdoor[facing=west,half=top,open=true,powered=false,waterlogged=false]':15374,
 'minecraft:dark_oak_trapdoor[facing=east,half=top,open=true,powered=false,waterlogged=false]':15375,
@@ -1466,7 +1466,7 @@ var blocksNamespace = {
 'minecraft:birch_trapdoor[facing=south,half=top,open=false,powered=false,waterlogged=false]':15849,
 'minecraft:birch_trapdoor[facing=west,half=top,open=false,powered=false,waterlogged=false]':15850,
 'minecraft:birch_trapdoor[facing=east,half=top,open=false,powered=false,waterlogged=false]':15851,
-'minecraft:birch_trapdoor[facing=north,half=top,open=true,powered=false,waterlogged=false]':15852
+'minecraft:birch_trapdoor[facing=north,half=top,open=true,powered=false,waterlogged=false]':15852,
 'minecraft:birch_trapdoor[facing=south,half=top,open=true,powered=false,waterlogged=false]':15853,
 'minecraft:birch_trapdoor[facing=west,half=top,open=true,powered=false,waterlogged=false]':15854,
 'minecraft:birch_trapdoor[facing=east,half=top,open=true,powered=false,waterlogged=false]':15855,
