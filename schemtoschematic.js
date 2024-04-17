@@ -2441,10 +2441,11 @@ function schemtoschematic(arrayBuffer, callback) {
             var blockdata = root.value.BlockData.value;
             var blocks = [];
             var data = [];
+            var addBlocks = null;
+            
             var varInt = 0;
             var varIntLength = 0;
             var blockId;
-        
             for (var i = 0; i < blockdata.length; i++) {
                 varInt |= (blockdata[i] & 127) << (varIntLength++ * 7);
                 
@@ -2453,9 +2454,20 @@ function schemtoschematic(arrayBuffer, callback) {
                 }
                 
                 blockId = convertToLegacyBlockId(palette[varInt]);
-                
-                blocks.push(blockId >> 4);
-                data.push(blockId & 0xF);
+                convertedID = (blockId >> 4);
+                blocks.push(convertedID);
+                metaID = (blockId & 0xF);
+                data.push(metaID);
+
+                if (convertedID > 255) { // Check if block ID is over 255
+                    if (addBlocks == null) { // Lazily create section
+                        addBlocks = new Array(((blocks.length + 1) >> 1));
+                    }
+                    var index = blocks.length - 1;
+                    addBlocks[index >> 1] = (index & 1) == 0 ? 
+                        (addBlocks[index >> 1] & 0xF0) | ((convertedID >> 8) & 0xF) :
+                        (addBlocks[index >> 1] & 0xF) | (((convertedID >> 8) & 0xF) << 4);
+                }            
                 
                 varIntLength = 0;
                 varInt = 0;
@@ -2463,6 +2475,7 @@ function schemtoschematic(arrayBuffer, callback) {
             
             root.value.Blocks = {type: 'byteArray', value: blocks};
             root.value.Data = {type: 'byteArray', value: data};
+            root.value.AddBlocks = {type: 'byteArray', value: addBlocks};
             delete root.value.BlockData;
         }
     }
@@ -2475,7 +2488,6 @@ function schemtoschematic(arrayBuffer, callback) {
         setMaterials(root);
         moveTileEntities(root);
         convertBlockData(root);
-
         zlib.gzip(new Uint8Array(nbt.writeUncompressed(root)), function(error, data) {
             if (error) { throw error; }
             
