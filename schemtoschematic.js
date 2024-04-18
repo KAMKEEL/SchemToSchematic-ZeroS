@@ -2461,7 +2461,7 @@ function schemtoschematic(arrayBuffer, callback) {
 
                 if (convertedID > 255) { // Check if block ID is over 255
                     if (addBlocks == null) { // Lazily create section
-                        addBlocks = new Array(((blocks.length + 1) >> 1));
+                        addBlocks = new Array(((blocks.length) >> 1)  + 1);
                     }
                     var index = blocks.length - 1;
                     addBlocks[index >> 1] = (index & 1) == 0 ? 
